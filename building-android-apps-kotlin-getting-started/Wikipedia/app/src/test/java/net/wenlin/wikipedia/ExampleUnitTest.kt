@@ -1,4 +1,4 @@
-package wenlin.net
+package net.wenlin.wikipedia
 
 import org.junit.Test
 
