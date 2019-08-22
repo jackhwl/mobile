@@ -36,9 +36,9 @@ class MainActivity : AppCompatActivity() {
         message.setOnClickListener {
             _ -> startActivity(Intent(this, ArticleDetailActivity::class.java))
         }
-        val navView: BottomNavigationView = findViewById(R.id.nav_view)
-
-        textMessage = findViewById(R.id.message)
-        navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+//        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+//
+//        textMessage = findViewById(R.id.message)
+//        navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
     }
 }
