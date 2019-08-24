@@ -7,9 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_favorites.*
 
 import net.wenlin.wikipedia.R
+import net.wenlin.wikipedia.adapters.ArticleCardRecyclerAdapter
 import net.wenlin.wikipedia.adapters.ArticleListItemRecyclerAdapter
 
 // TODO: Rename parameter arguments, choose names that match
@@ -23,15 +25,18 @@ private const val ARG_PARAM2 = "param2"
  */
 class FavoritesFragment : Fragment() {
 
+    var favoritesRecyler: RecyclerView? = null
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        var view = inflater!!.inflate(R.layout.fragment_favorites, container, false)
+        var view = inflater.inflate(R.layout.fragment_favorites, container, false)
 
-        favorites_article_recycler.layoutManager = LinearLayoutManager(context)
-        favorites_article_recycler.adapter = ArticleListItemRecyclerAdapter()
+        favoritesRecyler = view.findViewById<RecyclerView>(R.id.favorites_article_recycler);
+        favoritesRecyler!!.layoutManager = LinearLayoutManager(context)
+        favoritesRecyler!!.adapter = ArticleCardRecyclerAdapter()
 
         return view
     }
