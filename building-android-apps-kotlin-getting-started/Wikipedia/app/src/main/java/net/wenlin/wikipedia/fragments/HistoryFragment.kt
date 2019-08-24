@@ -6,8 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.fragment_history.*
 
 import net.wenlin.wikipedia.R
+import net.wenlin.wikipedia.adapters.ArticleCardRecyclerAdapter
+import net.wenlin.wikipedia.adapters.ArticleListItemRecyclerAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,7 +29,12 @@ class HistoryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_history, container, false)
+        var view = inflater!!.inflate(R.layout.fragment_history, container, false)
+
+        history_article_recycler.layoutManager = LinearLayoutManager(context)
+        history_article_recycler.adapter = ArticleCardRecyclerAdapter()
+
+        return view
     }
 
 
