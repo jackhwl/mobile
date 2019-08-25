@@ -47,6 +47,9 @@ class MainActivity : AppCompatActivity() {
 //        val navView: BottomNavigationView = findViewById(R.id.nav_view)
 //
 //        textMessage = findViewById(R.id.message)
+
+        setSupportActionBar(toolbar)
+
         navigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
         var transaction = supportFragmentManager.beginTransaction()

@@ -9,6 +9,7 @@ import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_search.*
 import net.wenlin.wikipedia.R
 import android.widget.SearchView
+import androidx.recyclerview.widget.RecyclerView
 
 class SearchActivity : AppCompatActivity() {
 
