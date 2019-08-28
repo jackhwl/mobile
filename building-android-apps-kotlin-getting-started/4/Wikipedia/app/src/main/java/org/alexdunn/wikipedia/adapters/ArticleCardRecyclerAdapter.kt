@@ -5,17 +5,20 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import org.alexdunn.wikipedia.R
 import org.alexdunn.wikipedia.holders.CardHolder
+import org.alexdunn.wikipedia.models.WikiPage
 
 /**
  * Created by alex on 10/25/17.
  */
 class ArticleCardRecyclerAdapter() : RecyclerView.Adapter<CardHolder>() {
-
+    val currentResults: ArrayList<WikiPage> = ArrayList<WikiPage>()
     override fun getItemCount(): Int {
-        return 15 // temporary
+        return currentResults.size
     }
 
     override fun onBindViewHolder(holder: CardHolder?, position: Int) {
+        var page = currentResults[position]
+        holder?.updateWithPage(page)
         // this is where we will update our view
     }
 

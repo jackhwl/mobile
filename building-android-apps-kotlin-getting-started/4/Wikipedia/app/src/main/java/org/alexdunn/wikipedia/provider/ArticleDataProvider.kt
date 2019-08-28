@@ -8,7 +8,6 @@ import org.alexdunn.wikipedia.models.Urls
 import org.alexdunn.wikipedia.models.WikiResult
 import java.io.Reader
 import java.lang.Exception
-import java.net.ResponseCache
 
 class ArticleDataProvider {
 
@@ -21,18 +20,18 @@ class ArticleDataProvider {
                     if(response.httpStatusCode != 200) {
                         throw Exception("Unable to get articles")
                     }
-                    val(data, _) = result
+                    val (data, _) = result
                     responseHandler.invoke(data as WikiResult)
                 }
     }
 
-    fun getRandomUrl(take: Int, responseHandler:(result: WikiResult) -> Unit?) {
+    fun getRandom(take: Int, responseHandler:(result: WikiResult) -> Unit?) {
         Urls.getRandomUrl(take).httpGet()
                 .responseObject(WikipediaDataDeserializer()) { _, response, result ->
                     if(response.httpStatusCode != 200) {
                         throw Exception("Unable to get articles")
                     }
-                    val(data, _) = result
+                    val (data, _) = result
                     responseHandler.invoke(data as WikiResult)
                 }
     }
